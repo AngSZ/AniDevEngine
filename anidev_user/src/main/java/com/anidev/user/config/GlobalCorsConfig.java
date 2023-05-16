@@ -7,10 +7,10 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 /**
- * @author Mr.M
+ * @author SuZhengAng
  * @version 1.0
- * @description TODO
- * @date 2023/2/12 11:27
+ * @description 跨域
+ * @date 2023/5/16 17:02
  */
 @Configuration
 public class GlobalCorsConfig {
@@ -20,7 +20,7 @@ public class GlobalCorsConfig {
 
         CorsConfiguration config = new CorsConfiguration();
         //允许白名单域名进行跨域调用
-        config.addAllowedOrigin("http://127.0.0.1:5173/");
+        config.addAllowedOriginPattern("*");
         //允许跨越发送cookie
         config.setAllowCredentials(true);
         //放行全部原始头信息
