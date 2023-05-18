@@ -1,6 +1,8 @@
 package com.anidev.user.controller;
 
 
+import com.anidev.user.common.ResultMessage;
+import com.anidev.user.po.User;
 import com.anidev.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,14 @@ public class UserController {
     @Autowired
     private UserService userService;
     @PostMapping("/login")
-    public String login(String username) {
-        log.info("username:{}", username);
-        return "TOKEN";
+    public ResultMessage login(String phone,String password) {
+        User user = userService.userLogin(phone, password);
+        return new ResultMessage(1,"Token",user);
+    }
+    @PostMapping("/regist")
+    public ResultMessage regist( User user){
+        log.info("user:{}",user);
+        ResultMessage resultMessage = userService.userRegist(user);
+        return resultMessage;
     }
 }
