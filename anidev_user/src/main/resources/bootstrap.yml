@@ -1,0 +1,31 @@
+server:
+  #  servlet:
+  #    context-path: /content
+  port: 63041
+spring:
+  #  datasource:
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url: jdbc:mysql://localhost:3306/anidev?serverTimezone=UTC&userUnicode=true&useSSL=false&
+  #    username: root
+  #    password: 12345678
+  application:
+    name: user #服务名user-ani_dev.yaml
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery: #服务注册相关配置
+        namespace: ani_dev
+        group: anidevEngine
+      config:
+        namespace: ani_dev
+        group: anidevEngine
+        file-extension: yaml
+        refresh-enabled: true
+  profiles:
+    active: ani_dev
+
+
+mybatis-plus:
+  configuration:
+    mapUnderscoreToCamelCase: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,4 +1,4 @@
-package com.anidev.user.config;
+package com.anidev.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
