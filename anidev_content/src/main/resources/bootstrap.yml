@@ -1,18 +1,16 @@
+#server:
+#  port: 63041
+#微服务配置
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/anidev_common?serverTimezone=UTC&userUnicode=true&useSSL=false&
-    username: root
-    password: 12345678
   application:
-    name: common #服务名common-ani_dev.yaml
+    name: content #服务名content-ani_dev.yaml
   cloud:
     nacos:
       server-addr: localhost:8848
       discovery: #服务注册相关配置
         namespace: ani_dev
         group: anidevEngine
-      config:
+      config: #配置文件相关配置
         namespace: ani_dev
         group: anidevEngine
         file-extension: yaml
@@ -21,11 +19,12 @@ spring:
           - data-id: mybatis-${spring.profiles.active}.yaml
             group: anidevEngine-common
             refresh: true
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/anidev_content?serverTimezone=UTC&userUnicode=true&useSSL=false&
+#    username: root
+#    password: 12345678
 
   profiles:
-    active: ani_dev
+    active: ani_dev   #环境名
 
-#mybatis-plus:
-#  configuration:
-#    mapUnderscoreToCamelCase: true
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
