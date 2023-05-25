@@ -30,8 +30,12 @@ public class UserController {
     }
     @PostMapping("/regist")
     public ResultMessage regist( User user){
-        log.info("user:{}",user);
         ResultMessage resultMessage = userService.userRegist(user);
         return resultMessage;
+    }
+    @GetMapping("/{phone}")
+    public Integer getUser(@PathVariable("phone") String phone){
+        User user = userService.getUserId(phone);
+        return user.getUserId();
     }
 }
