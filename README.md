@@ -51,3 +51,11 @@
 # 系统架构
 
 ![](assets/Architecture.png)
+
+# 主页面
+
+![](assets/HomepageThumbnail.png)
+
+# 说明
+
+正在开发中，2023年5月27号。
