@@ -79,4 +79,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         return null;
     }
+
+    @Override
+    public User getUsername(String phone) {
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(User::getPhone,phone);
+        User user = userMapper.selectOne(queryWrapper);
+        if(user != null){
+            return user;
+        }
+        return null;
+    }
 }

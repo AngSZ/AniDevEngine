@@ -19,8 +19,8 @@ public class Articles implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    private Long id;
 
     private Integer userId;
 
@@ -28,9 +28,9 @@ public class Articles implements Serializable {
 
     private String content;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime createdDate;
 
-    private LocalDateTime updatedAt;
+    private LocalDateTime updatedDate;
 
     private String phone;
 
@@ -44,5 +44,5 @@ public class Articles implements Serializable {
 
     private String label;
 
-
+    private String username;
 }

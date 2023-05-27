@@ -38,4 +38,10 @@ public class UserController {
         User user = userService.getUserId(phone);
         return user.getUserId();
     }
+    @GetMapping("/username/{phone}")
+    String getUsername(@PathVariable String phone){
+        User user = userService.getUsername(phone);
+        return user.getUsername();
+
+    }
 }

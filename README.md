@@ -11,8 +11,10 @@
 <img src="https://img.shields.io/badge/SpringCloud-Hoxton.SR9-brightgreen" ></img>
 <img src="https://img.shields.io/badge/Mybatis--Plus-3.4.1-blue" ></img>
 <img src="https://img.shields.io/badge/Vue-3.2.47-green" ></img>
+<img src="https://img.shields.io/badge/RabbitMQ-3.9.11-orange" ></img>
 <img src="https://img.shields.io/badge/license-Apache2.0-blue" ></img>
 </p>
+
 
 
 
@@ -48,3 +50,4 @@
 
 # 系统架构
 
+![](assets/Architecture.png)

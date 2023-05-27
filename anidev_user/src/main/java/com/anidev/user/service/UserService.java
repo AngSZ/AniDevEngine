@@ -18,4 +18,6 @@ public interface UserService extends IService<User> {
         public ResultMessage userRegist(User user);
 
         User getUserId(String phone);
+
+        User getUsername(String phone);
 }
