@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anidev.pushalert.pushalert.mapper.PushalertMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.anidev.pushalert.pushalert.po.Pushalert">
+        <id column="id" property="id" />
+        <result column="author" property="author" />
+        <result column="title" property="title" />
+        <result column="update_time" property="updateTime" />
+        <result column="label" property="label" />
+        <result column="favorites" property="favorites" />
+        <result column="content" property="content" />
+        <result column="views_count" property="viewsCount" />
+        <result column="comments_count" property="commentsCount" />
+        <result column="likes_count" property="likesCount" />
+        <result column="shares_count" property="sharesCount" />
+        <result column="author_avatar_url" property="authorAvatarUrl" />
+        <result column="is_published" property="published" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, author, title, update_time, label, favorites, content, views_count, comments_count, likes_count, shares_count, author_avatar_url, is_published
+    </sql>
+
+</mapper>

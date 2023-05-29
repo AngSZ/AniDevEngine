@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient("user")//这是微服务的名字
 public interface UserClient {
     @GetMapping("/user/{phone}")
-    Integer getUserId(@PathVariable("phone") String phone);
+    Long getUserId(@PathVariable("phone") String phone);
     @GetMapping("/user/username/{phone}")
     String getUsername(@PathVariable String phone);
 }

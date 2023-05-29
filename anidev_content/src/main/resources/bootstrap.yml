@@ -2,6 +2,12 @@
 #  port: 63041
 #微服务配置
 spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: sza
+    password: 123456
+    virtual-host: /dev
   application:
     name: content #服务名content-ani_dev.yaml
   cloud:

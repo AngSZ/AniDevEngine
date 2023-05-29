@@ -5,13 +5,11 @@ import com.anidev.content.common.ResultMessage;
 import com.anidev.content.dto.PostDto;
 import com.anidev.content.po.Articles;
 import com.anidev.content.service.ArticlesService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,9 +29,10 @@ public class ArticlesController {
 
     @Autowired
     private ArticlesService articlesService;
+
     @PostMapping("/publish")
     @Transactional
-    public ResultMessage publish(String title, String content,String value,String phone) {
+    public ResultMessage publish(String title, String content,String value,String phone){
         log.info("title:{},value:{},content:{},phone:{}",title,value,content,phone);
         Articles articles = new Articles();
         articles.setTitle(title);
@@ -45,6 +44,7 @@ public class ArticlesController {
         articles.setStatus("1");
 
         articlesService.publish(articles);
+
 
         return new ResultMessage(1, "success");
     }
@@ -71,5 +71,10 @@ public class ArticlesController {
         }).collect(Collectors.toList());
 //        log.info("collect:{}",collect);
         return collect;
+    }
+
+    @GetMapping("/updateTime/{id}")
+    LocalDateTime getUpdateTime(@PathVariable Long id){
+        return articlesService.getUpdateTime(id);
     }
 }

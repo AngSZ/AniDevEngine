@@ -34,7 +34,7 @@ public class UserController {
         return resultMessage;
     }
     @GetMapping("/{phone}")
-    public Integer getUser(@PathVariable("phone") String phone){
+    public Long getUser(@PathVariable("phone") String phone){
         User user = userService.getUserId(phone);
         return user.getUserId();
     }
